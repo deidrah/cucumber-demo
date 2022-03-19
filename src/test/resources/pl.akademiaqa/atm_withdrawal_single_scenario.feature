@@ -14,6 +14,7 @@ Feature: ATM Withdrawal single scenario
     Then 20 PLN should be dispensed
     And 80 PLN should stay on my account
 
+  @allMoney
   Scenario: I should be able to withdraw all money.
     When I request 100 PLN
     And I send confirmation letter
