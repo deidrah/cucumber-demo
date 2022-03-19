@@ -1,24 +1,16 @@
-Feature: ATM Withdrawal rule multiple withdraws
+Feature: ATM Withdrawal single scenario
 
-  I should be able to withdraw money, multiple times, from the ATM
+  I should be able to withdraw money from the ATM
 
   Background: I have positive balance
     Given I have 100 PLN in my account
-    And My name is "Bartek"
 
-  Rule: Multiple withdraws
+  Scenario: I have positive balance so I should be able to withdraw money.
+    When I request 20 PLN
+    Then 20 PLN should be dispensed
+    And 80 PLN should stay on my account
 
-    Scenario: Multiple withdraws, positive balance.
-      When I request 20 PLN
-      * I request 20 PLN
-      * I request 20 PLN
-      Then in total 60 PLN should be dispensed
-      And 40 PLN should stay on my account
-
-    Scenario: Multiple withdraws, negative balance..
-      When I request 50 PLN
-      * I request 30 PLN
-      * I request 50 PLN
-      Then in total 100 PLN should be dispensed
-      And 0 PLN should stay on my account
-
+  Scenario: I should be able to withdraw all money.
+    When I request 100 PLN
+    Then 100 PLN should be dispensed
+    And 0 PLN should stay on my account
