@@ -7,8 +7,8 @@ import io.cucumber.java.en.When;
 public class AtmWithdrawalSteps {
 
     @Given("I have {int} PLN in my account")
-    public void i_have_pln_in_my_account(Integer int1) {
-
+    public void i_have_pln_in_my_account(Integer balance) {
+        System.out.println("Mam w banku: " + balance);
     }
     @When("I request {int} PLN")
     public void i_request_pln(Integer int1) {

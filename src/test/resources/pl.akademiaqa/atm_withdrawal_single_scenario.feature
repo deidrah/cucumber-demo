@@ -1,10 +1,10 @@
-
 Feature: ATM Withdrawal rule multiple withdraws
 
   I should be able to withdraw money, multiple times, from the ATM
 
   Background: I have positive balance
     Given I have 100 PLN in my account
+    And My name is "Bartek"
 
   Rule: Multiple withdraws
 
@@ -21,3 +21,4 @@ Feature: ATM Withdrawal rule multiple withdraws
       * I request 50 PLN
       Then in total 100 PLN should be dispensed
       And 0 PLN should stay on my account
+
