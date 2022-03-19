@@ -3,7 +3,11 @@ Feature: ATM Withdrawal single scenario
   I should be able to withdraw money from the ATM
 
   Background: I have positive balance
-    Given I have 100 PLN in my account
+    Given I have positive balance on my accounts
+      | account          | balance |
+      | saving account   | 50      |
+      | debit account    | 20      |
+      | personal account | 30      |
 
   Scenario: I have positive balance so I should be able to withdraw money.
     When I request 20 PLN
