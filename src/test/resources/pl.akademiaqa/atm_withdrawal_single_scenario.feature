@@ -16,5 +16,15 @@ Feature: ATM Withdrawal single scenario
 
   Scenario: I should be able to withdraw all money.
     When I request 100 PLN
+    And I send confirmation letter
+    """txt
+        Hello Sir,
+        This is my confirmation letter.
+         And this is very long text.
+         This text can have multiple lines.
+         And spaces
+         ...
+        ...and even more lines.
+      """
     Then 100 PLN should be dispensed
     And 0 PLN should stay on my account

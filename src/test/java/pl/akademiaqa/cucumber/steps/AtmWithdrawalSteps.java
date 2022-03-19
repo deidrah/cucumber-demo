@@ -23,6 +23,11 @@ public class AtmWithdrawalSteps {
         }
     }
 
+    @When("I send confirmation letter")
+    public void i_send_confirmation_letter(String docString) {
+       System.out.println(docString);
+    }
+
 
     @Given("My name is {string}")
     public void my_name_is(String imie) {
